@@ -46,9 +46,17 @@ $app->get('search', function(Application $app, Request $request) {
 		$query->setParam('search_availability', 'iplayer');
 		$query->setParam('service_type', 'radio');
 		$query->setParam('q', $searchterm);
+		$query->setParam('perpage', 20);
 		
 		$result = $query->execute();
-		// var_dump(count($result)); exit;
+		
+		// Fetch the unique shows:
+		$unique_shows = $result->unique_shows();
+		
+		// var_dump($unique_shows); exit;
+		
+		// var_dump($)
+		
 		foreach($result as $item)
 		{
 			echo $item->passionsite_title . '<br />';
