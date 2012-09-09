@@ -22,7 +22,7 @@ class APICall
 	 *
 	 *	<code>
 	 * 		$call->addParam('query', array(
-	 * 			'default' => null,
+	 * 			'default' => 'chris',
 	 * 			'validation' => function($value)
 	 * 			{
 	 * 				return (strlen(trim($value)) > 0);
@@ -41,4 +41,34 @@ class APICall
 		$this->_params[$paramName] = $paramDetails;
 		return $this;
 	}
+	
+	/**
+	 * Set a parameter to the query
+	 *
+	 * @param 	string 		Parameter name
+	 * @param 	mixed 		Value
+	 * @return 	this 		Chainable
+	 * @throws 	BBC\iPlauyer\ION\QueryException 	If the validation fails or the param is not known.
+	 */
+	public function setParam($paramName, $value)
+	{
+		if(!array_key_exists($paramName, $this->_params))
+			throw new QueryException('Unknown parameter "' . $paramName . '"', QueryException::UNKNOWN_PARAM);
+		
+		// Check for and run validation:
+		$param = $this->_params[$paramName];
+		
+		if(array_key_exists('validation', $this->_params[$paramName]))
+		{
+			if(!$this->_params[$paramName]['validation']($value))
+			{
+				throw new QueryException('Param "' . $paramName . '" fails validation with value: "' . $value . '"', QueryException::FAILED_VALIDATION);
+			}
+		}
+		
+		$this->_params[$paramName]['value'] = $value;
+		
+		return $this;
+	}
+	
 }
