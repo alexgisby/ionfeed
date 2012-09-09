@@ -1,14 +1,6 @@
 {
-    "hash": "a91bd77e7f4a8406fa36b6380a717a3d",
+    "hash": "6c999197a4fa8cb1bb70dd4b1d2f096c",
     "packages": [
-        {
-            "package": "behat/behat",
-            "version": "v2.4.0"
-        },
-        {
-            "package": "behat/gherkin",
-            "version": "v2.2.4"
-        },
         {
             "package": "pimple/pimple",
             "version": "dev-master",
@@ -34,33 +26,9 @@
             "commit-date": "1347084669"
         },
         {
-            "package": "symfony/config",
-            "version": "2.1.x-dev",
-            "source-reference": "v2.1.0-RC2",
-            "commit-date": "1345643321"
-        },
-        {
-            "package": "symfony/console",
-            "version": "2.1.x-dev",
-            "source-reference": "v2.1.0",
-            "commit-date": "1345643321"
-        },
-        {
-            "package": "symfony/dependency-injection",
-            "version": "2.1.x-dev",
-            "source-reference": "v2.1.0",
-            "commit-date": "1346406727"
-        },
-        {
             "package": "symfony/event-dispatcher",
             "version": "2.1.x-dev",
             "source-reference": "v2.1.0-RC2",
-            "commit-date": "1345643321"
-        },
-        {
-            "package": "symfony/finder",
-            "version": "2.1.x-dev",
-            "source-reference": "v2.1.0",
             "commit-date": "1345643321"
         },
         {
@@ -82,19 +50,7 @@
             "commit-date": "1346859854"
         },
         {
-            "package": "symfony/translation",
-            "version": "2.1.x-dev",
-            "source-reference": "v2.1.0",
-            "commit-date": "1346140482"
-        },
-        {
             "package": "symfony/twig-bridge",
-            "version": "2.1.x-dev",
-            "source-reference": "v2.1.0",
-            "commit-date": "1345643321"
-        },
-        {
-            "package": "symfony/yaml",
             "version": "2.1.x-dev",
             "source-reference": "v2.1.0",
             "commit-date": "1345643321"
@@ -117,7 +73,7 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "behat/behat": 0
-    }
+    "stability-flags": [
+
+    ]
 }

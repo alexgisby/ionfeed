@@ -1,7 +1,6 @@
 {
 	"require": {
 		"silex/silex": "1.0.*",
-		"behat/behat": "2.4@stable",
 		"symfony/twig-bridge": "2.1.*",
 		"twig/twig": ">=1.2.0,<2.0-dev"
 	},
