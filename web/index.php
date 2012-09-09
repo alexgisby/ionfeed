@@ -48,7 +48,11 @@ $app->get('search', function(Application $app, Request $request) {
 		$query->setParam('q', $searchterm);
 		
 		$result = $query->execute();
-		var_dump($result); exit;
+		// var_dump(count($result)); exit;
+		foreach($result as $item)
+		{
+			echo $item->passionsite_title . '<br />';
+		}
 	}
 	
 	if($request->isXmlHttpRequest())

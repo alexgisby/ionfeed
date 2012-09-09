@@ -100,7 +100,12 @@ class APICall
 			$cached_item = $this->writeCache($cache_key, $curl_result);
 		}
 		
-		return $cached_item;
+		$resultObj = new SearchResult($cached_item);
+		
+		// $resultObj = json_decode($cached_item);
+		// echo '<pre>' . print_r($resultObj, true) . '</pre>'; exit;
+		
+		return $resultObj;
 	}
 	
 	/**
