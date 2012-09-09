@@ -196,7 +196,7 @@ class APICall
 	 * @param 	int 	The max length of time to consider the cache valid. In seconds.
 	 * @return 	mixed 	Either the contents of the cache file, or FALSE
 	 */
-	private function readCache($cache_key, $maxcache_age = 36)
+	private function readCache($cache_key, $maxcache_age = 3600)
 	{
 		$fullpath = $this->cachedir() . '/' . $cache_key;
 		if(file_exists($fullpath) && filemtime($fullpath) > time() - $maxcache_age)
