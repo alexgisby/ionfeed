@@ -39,7 +39,7 @@ $app->get('search', function(Application $app, Request $request) {
 	$searchterm = $request->get('q');
 	$searchresults = array();
 	
-	if($searchterm !== null)
+	if($searchterm !== null && trim($searchterm) != '')
 	{
 		// Run the search
 		$query = new BBC\iPlayer\ION\SearchQuery();
@@ -51,7 +51,7 @@ $app->get('search', function(Application $app, Request $request) {
 		
 		$result = $query->execute();
 		
-		$searchresults = $query->execute();
+		$searchresults = $result->groupedByShow();
 	}
 	
 	if($request->isXmlHttpRequest())

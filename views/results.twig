@@ -3,9 +3,9 @@
 {% block content %}
 	
 	<section id="results">
-		<h2>Results ({{ results.groupedByShow()|length }})</h2>
+		<h2>Results ({{ results|length }})</h2>
 		
-		{% for result in results.groupedByShow() %}
+		{% for result in results %}
 			<div class="result">
 				<img src="{{ result.0.image_url }}">
 				<h3>{{ result.0.brand_title }}</h3>
