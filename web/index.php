@@ -39,6 +39,7 @@ $app->get('search', function(Application $app, Request $request) {
 	if($searchterm !== null)
 	{
 		// Run the search
+		$query = new BBC\iPlayer\ION\SearchQuery();
 	}
 	
 	if($request->isXmlHttpRequest())
