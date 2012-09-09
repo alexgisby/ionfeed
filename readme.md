@@ -19,12 +19,15 @@ The clever code that does the querying is in app/
 
 The frontend is built on Twitter Bootstrap.
 
+I've used [Composer](http://getcomposer.org) for dependancy management, and you'll need this to install the app.
+
 ## Installation
 
 	git clone git@github.com:alexgisby/ionfeed.git ionfeed
 	cd ionfeed
 	mkdir cache
 	chmod -R 0777 cache
+	composer install
 
 ## Tests
 
