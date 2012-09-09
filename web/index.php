@@ -22,6 +22,12 @@ $app->get('/', function() use($app) {
 });
 
 
+$app->get('search', function() use($app){
+	
+	
+	
+});
+
 
 /**
  * ------------ Run boy run ---------------------
