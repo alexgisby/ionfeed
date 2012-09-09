@@ -193,12 +193,13 @@ class APICall
 	 * Reads the cache to see if an item exists or not
 	 *
 	 * @param 	string 	The cache filename to find
+	 * @param 	int 	The max length of time to consider the cache valid. In seconds.
 	 * @return 	mixed 	Either the contents of the cache file, or FALSE
 	 */
-	private function readCache($cache_key)
+	private function readCache($cache_key, $maxcache_age = 36)
 	{
 		$fullpath = $this->cachedir() . '/' . $cache_key;
-		if(file_exists($fullpath))
+		if(file_exists($fullpath) && filemtime($fullpath) > time() - $maxcache_age)
 		{
 			return file_get_contents($fullpath);
 		}
