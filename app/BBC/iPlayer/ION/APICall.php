@@ -81,19 +81,26 @@ class APICall
 	{
 		$url = $this->requestURL();
 		
-		$this->check_cache_dir();
+		$cacheDirState = $this->checkCacheDir();
 		
-		// Curl. Yay.
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$cache_key 		= sha1($url) . '.json';
+		$cached_item 	= $this->readCache($cache_key);
 		
-		$result = curl_exec($ch);
+		if(!$cached_item || $cacheDirState === false)
+		{
+			// Curl. Yay.
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		
-		curl_close($ch);
+			$curl_result = curl_exec($ch);
+			curl_close($ch);
+						
+			$cached_item = $this->writeCache($cache_key, $curl_result);
+		}
 		
-		return $result;
+		return $cached_item;
 	}
 	
 	/**
@@ -148,4 +155,61 @@ class APICall
 	 * -------------------- Caching Functions ----------------------
 	 */
 	
+	/**
+	 * Returns the path of the cachedir
+	 *
+	 * @return 	string
+	 */
+	private function cachedir()
+	{
+		return BASEDIR . DIRECTORY_SEPARATOR . 'cache';
+	}
+	
+	
+	/**
+	 * Checks that the cache dir exists and is writeable
+	 */
+	private function checkCacheDir()
+	{
+		if(!file_exists($this->cachedir()))
+		{
+			mkdir($this->cachedir(), 0777);
+		}
+		
+		if(!is_writeable($this->cachedir()))
+		{
+			chmod($this->cachedir(), 0777);
+		}
+	}
+	
+	/**
+	 * Reads the cache to see if an item exists or not
+	 *
+	 * @param 	string 	The cache filename to find
+	 * @return 	mixed 	Either the contents of the cache file, or FALSE
+	 */
+	private function readCache($cache_key)
+	{
+		$fullpath = $this->cachedir() . '/' . $cache_key;
+		if(file_exists($fullpath))
+		{
+			return file_get_contents($fullpath);
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * Writing into the cache
+	 *
+	 * @param 	string 	Cache key
+	 * @param 	string 	Response to cache
+	 * @return 	mixed 	Returns the object it just wrote
+	 */
+	private function writeCache($cache_key, $item)
+	{
+		$fullpath = $this->cachedir() . '/' . $cache_key;
+		file_put_contents($fullpath, $item);
+		return $item;
+	}
 }

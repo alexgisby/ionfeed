@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+define('BASEDIR', __DIR__ . '/..');
+
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
