@@ -2,6 +2,10 @@
  * Extra styling atop bootstrap for BBC Radio Finder
  */
 
+.text-left { text-align: left; }
+.text-center, .text-centre { text-align: center; }
+.text-right { text-align: right; }
+
 #search {
 	border-bottom: 1px solid #ccc;
 }
@@ -13,4 +17,18 @@
 
 .episode_title {
 	font-size: 14px;
+}
+
+.broadcast_date {
+	color: #666;
+	font-size: 12px;
+}
+
+#results h2 .badge {
+	font-size: 30px;
+}
+
+footer {
+	padding: 30px;
+	border-top: 1px solid #ddd;
 }

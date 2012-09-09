@@ -1,1 +1,18 @@
 {% extends 'layout.twig' %}
+
+{% block content %}
+	
+	<div class="hero-unit">
+		<form action="search" method="get" class="form-search">
+			<fieldset>
+				<legend>Search for Programmes</legend>
+				<div class="input-append">
+					<input type="text" class="span8 search-query" name="q">
+					<button type="submit" class="btn">Search</button>
+				</div>
+				<p style="margin-top: 10px;">Enter a Programme name above to get started!</p>
+			</fieldset>
+		</form>
+	</div>
+	
+{% endblock %}

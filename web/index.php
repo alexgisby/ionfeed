@@ -28,7 +28,9 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
  * Just displays a massive search box for the user to hit
  */
 $app->get('/', function() use($app) {
-	return $app['twig']->render('index.twig');
+	return $app['twig']->render('index.twig', array(
+		'searchterm' => ''
+	));
 });
 
 /**

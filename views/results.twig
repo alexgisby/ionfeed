@@ -2,8 +2,21 @@
 
 {% block content %}
 	
+	<section id="search">
+		<form action="search" method="get" class="form form-search">
+			<fieldset>
+				<legend>Search for Programmes</legend>
+				<div class="field">
+					<label for="search">Programme Name:</label>
+					<input type="search" class="search-query" name="q" value="{{ searchterm }}" placeholder="Search...">
+					<button type="submit" class="btn btn-success">Go!</button>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+	
 	<section id="results">
-		<h2>Results ({{ results|length }})</h2>
+		<h2><span class="badge">{{ results|length }}</span> Results</h2>
 		
 		{% for result in results %}
 			<div class="result">
@@ -31,6 +44,9 @@
 											<a href="http://{{ episode.my_short_url }}">{{ episode.complete_title }}</a>
 										</h4>
 										<p class="synopsis">{{ episode.synopsis }}</p>
+										<p class="broadcast_date">
+											Broadcast: {{ episode.actual_start|date('jS F Y') }}
+										</p>
 									</td>
 									<td>
 										{{ episode.duration / 60 }} minutes
@@ -43,7 +59,9 @@
 				</div> <!-- /row-fluid -->
 			</div>
 		{% else %}
-			<p>No Results to display</p>
+			<div class="alert alert-info no-results">
+				No Results to display :(
+			</div>
 		{% endfor %}
 		
 	</section>
