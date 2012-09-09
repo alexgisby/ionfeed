@@ -40,6 +40,7 @@ $app->get('search', function(Application $app, Request $request) {
 	{
 		// Run the search
 		$query = new BBC\iPlayer\ION\SearchQuery();
+		var_dump($query); exit;
 	}
 	
 	if($request->isXmlHttpRequest())
