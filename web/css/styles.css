@@ -1,0 +1,16 @@
+/**
+ * Extra styling atop bootstrap for BBC Radio Finder
+ */
+
+#search {
+	border-bottom: 1px solid #ccc;
+}
+
+.masterbrand {
+	float: right;
+	margin-top: 15px;
+}
+
+.episode_title {
+	font-size: 14px;
+}
