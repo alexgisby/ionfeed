@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	
+	<section id="results">
+		<h2>Results ({{ results|length }})</h2>
+		
+		{% if results|length > 0 %}
+			
+		{% else %}
+			<p>No Results Found</p>
+		{% endif %}
+		
+	</section>
+	
+{% endblock %}
