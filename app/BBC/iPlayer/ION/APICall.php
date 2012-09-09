@@ -79,7 +79,21 @@ class APICall
 	 */
 	public function execute()
 	{
-	
+		$url = $this->requestURL();
+		
+		$this->check_cache_dir();
+		
+		// Curl. Yay.
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		
+		$result = curl_exec($ch);
+		
+		curl_close($ch);
+		
+		return $result;
 	}
 	
 	/**
@@ -87,7 +101,7 @@ class APICall
 	 *
 	 * @return 	string
 	 */
-	public function request_url()
+	public function requestURL()
 	{
 		// We need this later to work out the URL of the API Call:
 		$called_class 	= get_called_class();
@@ -129,4 +143,9 @@ class APICall
 		
 		return $qs;
 	}
+	
+	/**
+	 * -------------------- Caching Functions ----------------------
+	 */
+	
 }

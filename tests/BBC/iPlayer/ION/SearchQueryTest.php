@@ -122,6 +122,6 @@ class SearchQueryTest extends \PHPUnit_Framework_TestCase
 		$query->setParam('service_type', 'radio');
 		$query->setParam('q', 'Chris Moyles');
 		
-		$this->assertEquals('http://www.bbc.co.uk/iplayer/ion/searchextended/q/Chris+Moyles/search_availability/iplayer/service_type/radio/format/json', $query->request_url());
+		$this->assertEquals('http://www.bbc.co.uk/iplayer/ion/searchextended/q/Chris+Moyles/search_availability/iplayer/service_type/radio/format/json', $query->requestURL());
 	}
 }
