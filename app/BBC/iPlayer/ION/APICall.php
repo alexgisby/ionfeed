@@ -71,4 +71,62 @@ class APICall
 		return $this;
 	}
 	
+	/**
+	 * Executes the query against the API and returns the result.
+	 *
+	 * @return 	\BBC\iPlayer\ION\SearchResult
+	 * @throws 	\BBC\iPlayer\ION\QueryException
+	 */
+	public function execute()
+	{
+	
+	}
+	
+	/**
+	 * Returns the full URL that will be used for this request
+	 *
+	 * @return 	string
+	 */
+	public function request_url()
+	{
+		// We need this later to work out the URL of the API Call:
+		$called_class 	= get_called_class();
+
+		$query_string 	= $this->buildQueryString();
+		$request_url 	= $called_class::API_URL . $query_string;
+
+		// Add in the JSON format:
+		$request_url .= '/format/json';
+		
+		return $request_url;
+	}
+	
+	
+	/**
+	 * Builds up the "query string" for this request. URLencodes everything, and puts it in the format:
+	 *
+	 * 	/{key1}/{value1}/{key2}/{value2}
+	 *
+	 * Any parameters which have a value or default are filled in, all others are ommitted.
+	 *
+	 * @return 	string
+	 */
+	protected function buildQueryString()
+	{
+		$qs = '';
+		
+		foreach($this->_params as $key => $param)
+		{
+			if(array_key_exists('value', $param))
+			{
+				$qs .= '/' . urlencode($key) . '/' . urlencode($param['value']);
+			}
+			elseif(array_key_exists('default', $param))
+			{
+				$qs .= '/' . urlencode($key) . '/' . urlencode($param['default']);
+			}
+		}
+		
+		return $qs;
+	}
 }

@@ -14,7 +14,7 @@ class SearchQuery extends APICall
 	/**
 	 * Base URL for the search feeds
 	 */
-	const SEARCH_URL = 'http://www.bbc.co.uk/iplayer/ion/searchextended';
+	const API_URL = 'http://www.bbc.co.uk/iplayer/ion/searchextended';
 
 	/**
 	 * Constructor. Builds up the ruleset for this API Call and returns the instance.

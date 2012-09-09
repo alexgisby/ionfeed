@@ -111,5 +111,17 @@ class SearchQueryTest extends \PHPUnit_Framework_TestCase
 		$this->assertEquals(count($values), $invalid_count);
 	}
 	 
-	
+	/**
+	 * Testing the URl generation
+	 */
+	public function testURLGeneration()
+	{
+		$query = new \BBC\iPlayer\ION\SearchQuery();
+		
+		$query->setParam('search_availability', 'iplayer');
+		$query->setParam('service_type', 'radio');
+		$query->setParam('q', 'Chris Moyles');
+		
+		$this->assertEquals('http://www.bbc.co.uk/iplayer/ion/searchextended/q/Chris+Moyles/search_availability/iplayer/service_type/radio/format/json', $query->request_url());
+	}
 }

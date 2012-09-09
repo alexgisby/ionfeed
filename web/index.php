@@ -40,7 +40,13 @@ $app->get('search', function(Application $app, Request $request) {
 	{
 		// Run the search
 		$query = new BBC\iPlayer\ION\SearchQuery();
-		var_dump($query); exit;
+		
+		$query->setParam('search_availability', 'iplayer');
+		$query->setParam('service_type', 'radio');
+		$query->setParam('q', $searchterm);
+		
+		$result = $query->execute();
+		var_dump($result); exit;
 	}
 	
 	if($request->isXmlHttpRequest())
@@ -56,7 +62,7 @@ $app->get('search', function(Application $app, Request $request) {
 	{
 		return $app['twig']->render('results.twig', array(
 			'results' => array(),
-			'searchterm'
+			'searchterm' => $searchterm,
 		));
 	}
 	
