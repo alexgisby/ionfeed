@@ -46,175 +46,6 @@
         ]
     },
     {
-        "name": "symfony/http-kernel",
-        "version": "2.1.x-dev",
-        "version_normalized": "2.1.9999999.9999999-dev",
-        "target-dir": "Symfony/Component/HttpKernel",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/HttpKernel",
-            "reference": "ec5cdb100c20537e9d806facd4d121c985658e8b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/symfony/HttpKernel/zipball/ec5cdb100c20537e9d806facd4d121c985658e8b",
-            "reference": "ec5cdb100c20537e9d806facd4d121c985658e8b",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "symfony/event-dispatcher": "2.1.*",
-            "symfony/http-foundation": "2.1.*"
-        },
-        "require-dev": {
-            "symfony/browser-kit": "2.1.*",
-            "symfony/class-loader": "2.1.*",
-            "symfony/config": "2.1.*",
-            "symfony/console": "2.1.*",
-            "symfony/dependency-injection": "2.1.*",
-            "symfony/finder": "2.1.*",
-            "symfony/process": "2.1.*",
-            "symfony/routing": "2.1.*"
-        },
-        "suggest": {
-            "symfony/browser-kit": "2.1.x-dev",
-            "symfony/class-loader": "2.1.x-dev",
-            "symfony/config": "2.1.x-dev",
-            "symfony/console": "2.1.x-dev",
-            "symfony/dependency-injection": "2.1.x-dev",
-            "symfony/finder": "2.1.x-dev"
-        },
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\HttpKernel": ""
-            }
-        },
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony HttpKernel Component",
-        "homepage": "http://symfony.com"
-    },
-    {
-        "name": "symfony/event-dispatcher",
-        "version": "2.1.x-dev",
-        "version_normalized": "2.1.9999999.9999999-dev",
-        "target-dir": "Symfony/Component/EventDispatcher",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/EventDispatcher",
-            "reference": "v2.1.0-RC2"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/symfony/EventDispatcher/zipball/v2.1.0-RC2",
-            "reference": "v2.1.0-RC2",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/dependency-injection": "2.1.*"
-        },
-        "suggest": {
-            "symfony/dependency-injection": "2.1.x-dev",
-            "symfony/http-kernel": "2.1.x-dev"
-        },
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\EventDispatcher": ""
-            }
-        },
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony EventDispatcher Component",
-        "homepage": "http://symfony.com"
-    },
-    {
-        "name": "symfony/http-foundation",
-        "version": "2.1.x-dev",
-        "version_normalized": "2.1.9999999.9999999-dev",
-        "target-dir": "Symfony/Component/HttpFoundation",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/HttpFoundation",
-            "reference": "v2.1.0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/symfony/HttpFoundation/zipball/v2.1.0",
-            "reference": "v2.1.0",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\HttpFoundation": "",
-                "SessionHandlerInterface": "Symfony/Component/HttpFoundation/Resources/stubs"
-            }
-        },
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony HttpFoundation Component",
-        "homepage": "http://symfony.com"
-    },
-    {
         "name": "symfony/routing",
         "version": "2.1.x-dev",
         "version_normalized": "2.1.9999999.9999999-dev",
@@ -322,42 +153,25 @@
         ]
     },
     {
-        "name": "symfony/twig-bridge",
+        "name": "symfony/http-foundation",
         "version": "2.1.x-dev",
         "version_normalized": "2.1.9999999.9999999-dev",
-        "target-dir": "Symfony/Bridge/Twig",
+        "target-dir": "Symfony/Component/HttpFoundation",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/TwigBridge",
+            "url": "https://github.com/symfony/HttpFoundation",
             "reference": "v2.1.0"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/TwigBridge/zipball/v2.1.0",
+            "url": "https://github.com/symfony/HttpFoundation/zipball/v2.1.0",
             "reference": "v2.1.0",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3",
-            "twig/twig": ">=1.9.1,<2.0-dev"
+            "php": ">=5.3.3"
         },
-        "require-dev": {
-            "symfony/form": "2.1.*",
-            "symfony/routing": "2.1.*",
-            "symfony/templating": "2.1.*",
-            "symfony/translation": "2.1.*",
-            "symfony/yaml": "2.1.*",
-            "symfony/security": "2.1.*"
-        },
-        "suggest": {
-            "symfony/form": "2.1.x-dev",
-            "symfony/routing": "2.1.x-dev",
-            "symfony/templating": "2.1.x-dev",
-            "symfony/translation": "2.1.x-dev",
-            "symfony/yaml": "2.1.x-dev",
-            "symfony/security": "2.1.x-dev"
-        },
-        "type": "symfony-bridge",
+        "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.1-dev"
@@ -366,7 +180,8 @@
         "installation-source": "source",
         "autoload": {
             "psr-0": {
-                "Symfony\\Bridge\\Twig": ""
+                "Symfony\\Component\\HttpFoundation": "",
+                "SessionHandlerInterface": "Symfony/Component/HttpFoundation/Resources/stubs"
             }
         },
         "license": [
@@ -382,7 +197,128 @@
                 "homepage": "http://symfony.com/contributors"
             }
         ],
-        "description": "Symfony Twig Bridge",
+        "description": "Symfony HttpFoundation Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/event-dispatcher",
+        "version": "2.1.x-dev",
+        "version_normalized": "2.1.9999999.9999999-dev",
+        "target-dir": "Symfony/Component/EventDispatcher",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/EventDispatcher",
+            "reference": "v2.1.0-RC2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/symfony/EventDispatcher/zipball/v2.1.0-RC2",
+            "reference": "v2.1.0-RC2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/dependency-injection": "2.1.*"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "2.1.x-dev",
+            "symfony/http-kernel": "2.1.x-dev"
+        },
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\EventDispatcher": ""
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/http-kernel",
+        "version": "2.1.x-dev",
+        "version_normalized": "2.1.9999999.9999999-dev",
+        "target-dir": "Symfony/Component/HttpKernel",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/HttpKernel",
+            "reference": "ec5cdb100c20537e9d806facd4d121c985658e8b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/symfony/HttpKernel/zipball/ec5cdb100c20537e9d806facd4d121c985658e8b",
+            "reference": "ec5cdb100c20537e9d806facd4d121c985658e8b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/event-dispatcher": "2.1.*",
+            "symfony/http-foundation": "2.1.*"
+        },
+        "require-dev": {
+            "symfony/browser-kit": "2.1.*",
+            "symfony/class-loader": "2.1.*",
+            "symfony/config": "2.1.*",
+            "symfony/console": "2.1.*",
+            "symfony/dependency-injection": "2.1.*",
+            "symfony/finder": "2.1.*",
+            "symfony/process": "2.1.*",
+            "symfony/routing": "2.1.*"
+        },
+        "suggest": {
+            "symfony/browser-kit": "2.1.x-dev",
+            "symfony/class-loader": "2.1.x-dev",
+            "symfony/config": "2.1.x-dev",
+            "symfony/console": "2.1.x-dev",
+            "symfony/dependency-injection": "2.1.x-dev",
+            "symfony/finder": "2.1.x-dev"
+        },
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\HttpKernel": ""
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony HttpKernel Component",
         "homepage": "http://symfony.com"
     },
     {
@@ -462,5 +398,69 @@
         "keywords": [
             "microframework"
         ]
+    },
+    {
+        "name": "symfony/twig-bridge",
+        "version": "2.1.x-dev",
+        "version_normalized": "2.1.9999999.9999999-dev",
+        "target-dir": "Symfony/Bridge/Twig",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/TwigBridge",
+            "reference": "v2.1.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/symfony/TwigBridge/zipball/v2.1.0",
+            "reference": "v2.1.0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "twig/twig": ">=1.9.1,<2.0-dev"
+        },
+        "require-dev": {
+            "symfony/form": "2.1.*",
+            "symfony/routing": "2.1.*",
+            "symfony/templating": "2.1.*",
+            "symfony/translation": "2.1.*",
+            "symfony/yaml": "2.1.*",
+            "symfony/security": "2.1.*"
+        },
+        "suggest": {
+            "symfony/form": "2.1.x-dev",
+            "symfony/routing": "2.1.x-dev",
+            "symfony/templating": "2.1.x-dev",
+            "symfony/translation": "2.1.x-dev",
+            "symfony/yaml": "2.1.x-dev",
+            "symfony/security": "2.1.x-dev"
+        },
+        "type": "symfony-bridge",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Bridge\\Twig": ""
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Twig Bridge",
+        "homepage": "http://symfony.com"
     }
 ]
