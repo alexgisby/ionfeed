@@ -3,13 +3,27 @@
 {% block content %}
 	
 	<section id="results">
-		<h2>Results ({{ results|length }})</h2>
+		<h2>Results ({{ results.groupedByShow()|length }})</h2>
 		
-		{% if results|length > 0 %}
-			
+		{% for result in results.groupedByShow() %}
+			<div class="result">
+				<img src="{{ result.0.image_url }}">
+				<h3>{{ result.0.brand_title }}</h3>
+				<p>{{ result.0.masterbrand_title }}</p>
+				
+				<table>
+					{% for episode in result %}
+						<tr>
+							<td>{{ episode.complete_title }}</td>
+							<td>{{ episode.synopsis }}</td>
+						</tr>
+					{% endfor %}
+				</table>
+				
+			</div>
 		{% else %}
-			<p>No Results Found</p>
-		{% endif %}
+			<p>No Results to display</p>
+		{% endfor %}
 		
 	</section>
 	

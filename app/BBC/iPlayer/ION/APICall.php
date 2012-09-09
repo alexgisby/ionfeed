@@ -173,6 +173,8 @@ class APICall
 	
 	/**
 	 * Checks that the cache dir exists and is writeable
+	 * Largely useless as you'll get errors anyway usually, so mkdir and chmod
+	 * yourself :)
 	 */
 	private function checkCacheDir()
 	{

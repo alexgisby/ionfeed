@@ -37,6 +37,7 @@ $app->get('/', function() use($app) {
 $app->get('search', function(Application $app, Request $request) {
 	
 	$searchterm = $request->get('q');
+	$searchresults = array();
 	
 	if($searchterm !== null)
 	{
@@ -50,24 +51,14 @@ $app->get('search', function(Application $app, Request $request) {
 		
 		$result = $query->execute();
 		
-		// Fetch the unique shows:
-		$unique_shows = $result->unique_shows();
-		
-		// var_dump($unique_shows); exit;
-		
-		// var_dump($)
-		
-		foreach($result as $item)
-		{
-			echo $item->passionsite_title . '<br />';
-		}
+		$searchresults = $query->execute();
 	}
 	
 	if($request->isXmlHttpRequest())
 	{
 		$return_result = array(
 			'searchterm' => $searchterm,
-			'results' => array(),
+			'results' => $searchresults,
 		);
 		
 		return $app->json($return_result);
@@ -75,8 +66,8 @@ $app->get('search', function(Application $app, Request $request) {
 	else
 	{
 		return $app['twig']->render('results.twig', array(
-			'results' => array(),
 			'searchterm' => $searchterm,
+			'results' => $searchresults
 		));
 	}
 	
